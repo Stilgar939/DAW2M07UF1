@@ -1,6 +1,6 @@
 <?php
 
-    $users = "/users/usuaris.txt";
+    $users = "/var/www/html/users/usuaris.txt";
     $fitxer = fopen($users,"r") or die ("L'usuari no s'ha pogut validar");
 
     if($fitxer){
@@ -18,3 +18,6 @@
 
 ?>
 
+<html>
+    <h1>HolaMon</h1>
+</html>
