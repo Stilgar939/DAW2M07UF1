@@ -1,0 +1,3 @@
+administrador:clotfje
+carlos:cv1234
+oriol:om1234
