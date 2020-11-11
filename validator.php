@@ -8,11 +8,13 @@
         $llegir_usuaris = explode(PHP_EOL, fread($fitxer,$mida_fitxer)); //Llegeix tot el fitxer d'usuaris
     }
     foreach ($llegir_usuaris as $usuari) {
-        list($usr, $pwd) = explode(":",$usuari);
+        $login = explode(":",$usuari);
         
-        if(($_POST['usuari'] == $usr) && ($_POST["password"] == $pwd)){
+        if(($_POST['usuari'] == $logpwd[0]) && ($_POST['password'] == $logpwd[1])){
             fclose($fitxer);
-            echo("Sessio iniciada");
+            session_name($_POST['usuari']);
+			session_start();
+			break;
         }
     }
 

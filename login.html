@@ -1,15 +1,16 @@
 <html>
 
     <head>
+        <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
 
     <body>
         <div id="box">
             <h1>Accedeix a l'espai</h1>
-            <form action="http://localhost/validator.php">
-                <input id="usr" type="text" value="usuari"><br>
-                <input id="pwd" type="password" value="password">
+            <form action="http://localhost/validator.php" accept-charset="utf-8">
+                <input id="usr" type="text" name="usuari"><br>
+                <input id="pwd" type="password" name="password">
                 <button id="accedir" type="submit">Accedir</button>
             </form>
         </div>
