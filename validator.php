@@ -16,35 +16,24 @@
 
             if(($_GET['usuari'] == $login[0]) && ($_GET['password'] == $login[1])){
                 fclose($fitxer);
-                session_name($_POST['usuari']);
+                session_name($_GET['usuari']);
                 session_start();
-		        break;
+                break;
+                
             }
+            
+            header('Location: /principal_admin.php');
 
-            ?>
-            <html>
-                <h1>Benvingut administrador</h1>
-                <?php echo "Sessió de l'usuari:".session_name()."<br>"; ?>
-            </html>
-            <?php
         }else{
 
             if(($_GET['usuari'] == $login[0]) && ($_GET['password'] == $login[1])){
                 fclose($fitxer);
                 session_name($_POST['usuari']);
                 session_start();
-		        break;
+                break;
+                
             }
-
-            ?>
-            
-            <html>
-                <h1>Benvingut client</h1>
-                <?php echo "Sessió de l'usuari:".session_name()."<br>"; ?>
-            </html>
-
-            <?php
-
+            header('Location: /principal_client.php');
         }
     }
 
