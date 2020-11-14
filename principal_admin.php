@@ -1,4 +1,5 @@
 <?php
+    session_name('sessioAdmin');
     session_start();
 ?>
 

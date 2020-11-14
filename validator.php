@@ -5,37 +5,39 @@
 
     if($llegir_fitxer){
         $mida_fitxer = filesize($fitxer_usuaris);
-        $usuaris = explode(PHP_EOL, fread($fitxer_usuaris,$mida_fitxer)); //Llegeix tot el fitxer d'usuaris
+        $usuaris = explode(PHP_EOL, fread($llegir_fitxer,$mida_fitxer)); //Llegeix tot el fitxer d'usuaris
     }
     foreach ($usuaris as $usuari) {
         $login = explode(":",$usuari);
-        
-        $u = $_GET['usuari'];
 
-        if( $u == 'administrador'){
+        $usr = $_POST['usuari'];
+        $pwd = $_POST['password'];
 
-            if(($_GET['usuari'] == $login[0]) && ($_GET['password'] == $login[1])){
+        if( $usr == 'administrador'){
+
+            if($usr == $login[0] && $pwd == $login[1]){
                 fclose($fitxer);
-                session_name($_GET['usuari']);
-                session_start();
+                header('Location: /principal_admin.php');
                 break;
                 
+            }else{
+                header('Location: /login.html');
+            }  
+        }
+        else{
+            if($usr == $login[0] && $pwd == $login[1]){
+                fclose($fitxer);
+                header('Location: /principal_client.php');
+                break;
+        
+            }else{
+                header('Location: /login.html');
             }
             
-            header('Location: /principal_admin.php');
-
-        }else{
-
-            if(($_GET['usuari'] == $login[0]) && ($_GET['password'] == $login[1])){
-                fclose($fitxer);
-                session_name($_POST['usuari']);
-                session_start();
-                break;
-                
-            }
-            header('Location: /principal_client.php');
         }
-    }
+    
 
+    }
+    
 ?>
 

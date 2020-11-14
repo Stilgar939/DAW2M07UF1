@@ -1,5 +1,6 @@
 <?php
-
+    session_name("client");
+    session_start();
 ?>
 
 <html>
