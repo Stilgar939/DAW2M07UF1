@@ -3,41 +3,35 @@
     $fitxer_usuaris = "/var/www/html/users/usuaris.txt";
     $llegir_fitxer = fopen($fitxer_usuaris,"r") or die ("L'usuari no s'ha pogut validar");
 
-    if($llegir_fitxer){
-        $mida_fitxer = filesize($fitxer_usuaris);
-        $usuaris = explode(PHP_EOL, fread($llegir_fitxer,$mida_fitxer)); //Llegeix tot el fitxer d'usuaris
-    }
-    foreach ($usuaris as $usuari) {
-        $login = explode(":",$usuari);
+    $usr = $_GET["usuari"];
+    $pwd = $_GET["password"];
 
-        $usr = $_POST['usuari'];
-        $pwd = $_POST['password'];
+    //echo(var_dump($pwd));
 
-        if( $usr == 'administrador'){
+    while(!feof($llegir_fitxer)){
+        $log = explode(":",fgets($llegir_fitxer));
 
-            if($usr == $login[0] && $pwd == $login[1]){
-                fclose($fitxer);
+        if($usr== $log[0] && trim($log[1])==$pwd){
+            
+            if($usr == "admin"){
                 header('Location: /principal_admin.php');
                 break;
-                
             }else{
-                header('Location: /login.html');
-            }  
-        }
-        else{
-            if($usr == $login[0] && $pwd == $login[1]){
-                fclose($fitxer);
                 header('Location: /principal_client.php');
-                break;
-        
-            }else{
-                header('Location: /login.html');
             }
             
-        }
-    
 
-    }
+            echo($log[0]);
+            echo($log[1]);
+            //header('Location: /principal_admin.php');
+            break;
+        }else{
+            echo("No és un usuari vàlid");
+        }
+    }  
+    fclose($llegir_fitxer);
+
+   
     
 ?>
 
