@@ -3,8 +3,8 @@
     $fitxer_usuaris = "/var/www/html/users/usuaris.txt";
     $llegir_fitxer = fopen($fitxer_usuaris,"r") or die ("L'usuari no s'ha pogut validar");
 
-    $usr = $_GET["usuari"];
-    $pwd = $_GET["password"];
+    $usr = $_POST["usuari"];
+    $pwd = $_POST["password"];
 
     //echo(var_dump($pwd));
 
