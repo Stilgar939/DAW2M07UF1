@@ -18,13 +18,9 @@
                 break;
             }else{
                 header('Location: /principal_client.php');
+                break;
             }
             
-
-            echo($log[0]);
-            echo($log[1]);
-            //header('Location: /principal_admin.php');
-            break;
         }else{
             echo("No és un usuari vàlid");
         }
