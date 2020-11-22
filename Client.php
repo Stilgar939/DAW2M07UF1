@@ -1,12 +1,10 @@
 <?php
 
+require_once("Persona.php");
+
     //Classe client que ereta de persona
-    $doc = "/var/www/html/users/usuaris.txt";
 
     class Client extends Persona{
-
-        var $user;
-        var $pass;
 
         public function __construct($user,$pass){
             $this->user = $user;
@@ -14,8 +12,11 @@
         }
 
         public function AfegeixUsuari($info){
+
+            $doc = "/var/www/html/users/usuaris.txt";
+
             $df = fopen($doc,"a") or die("L'usuari no s'ha pogut crear");
-            fwrite($df,$info);
+            fwrite($df,$info."\n");
             fclose($df);
         }
 

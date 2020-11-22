@@ -10,6 +10,8 @@
 
     $info = $usr.":".$pwd;
 
+    //echo($info);
+    
     $u = new Client($usr,$pwd);
     $u -> AfegeixUsuari($info);
     echo("Usuari creat correctament");
