@@ -11,24 +11,24 @@
 <body>
     <nav>
         <ul id="navigation">
-            <li><a href="/M07/projecte/cataleg.php" class="first">Cataleg</a></li>
-            <li><a href="/M07/projecte/comandes.php">Comandes &raquo;</a>
+            <li><a href="/projecte/cataleg.html" class="first">Cataleg</a></li>
+            <li><a href="/projecte/comandes.html">Comandes &raquo;</a>
                 <ul>
-                    <li><a href="/M07/projecte/visualitza.html">Visualitza</a></li>
-                    <li><a href="/M07/projecte/modifica.html">Modifica</a></li>
-                    <li><a href="/M07/projecte/elimina.html">Elimina</a></li>
-                </ul>
-            <li><a href="/M07/projecte/zona_personal.php">Zona Personal</a>
-    </nav>
+                <li><a href="/projecte/visualitza_usuari.html">Visualitza</a></li>
+                <li><a href="/projecte/modifica_usuari.html">Modifica</a></li>
+                <li><a href="/projecte/elimina_usuari.html">Elimina</a></li>
+            </ul>
+            <li><a href="/projecte/zona_personal.html">Zona Personal</a>
+            </nav>
 
 
     <div class="grid">
-        <img src="/M07/projecte/fotos/fototest.jpg" alt="Producte 1">
-        <img src="/M07/projecte/fotos/fototest.jpg" alt="Producte 2">
-        <img src="/M07/projecte/fotos/fototest.jpg" alt="Producte 3">
-        <img src="/M07/projecte/fotos/fototest.jpg" alt="Producte 4">
-        <img src="/M07/projecte/fotos/fototest.jpg" alt="Producte 5">
-        <img src="/M07/projecte/fotos/fototest.jpg" alt="Producte 6">
+        <img src="/projecte/fotos/fototest.jpg" alt="Producte 1">
+        <img src="/projecte/fotos/fototest.jpg" alt="Producte 2">
+        <img src="/projecte/fotos/fototest.jpg" alt="Producte 3">
+        <img src="/projecte/fotos/fototest.jpg" alt="Producte 4">
+        <img src="/projecte/fotos/fototest.jpg" alt="Producte 5">
+        <img src="/projecte/fotos/fototest.jpg" alt="Producte 6">
     </div>
 
 </body>
